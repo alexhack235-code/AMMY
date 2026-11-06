@@ -1,0 +1,17 @@
+{
+  "name": "ammy-birthday-website",
+  "version": "1.0.0",
+  "description": "Happy Birthday Ammanda - Luxury Interactive Birthday Experience",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static build ready'"
+  },
+  "keywords": [
+    "birthday",
+    "celebration",
+    "ammanda"
+  ],
+  "author": "alexhack235-code",
+  "license": "MIT"
+}
