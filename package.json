@@ -4,8 +4,7 @@
   "description": "Happy Birthday Ammanda - Luxury Interactive Birthday Experience",
   "main": "index.html",
   "scripts": {
-    "start": "npx serve .",
-    "build": "echo 'Static build ready'"
+    "start": "npx serve ."
   },
   "keywords": [
     "birthday",
