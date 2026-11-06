@@ -21,58 +21,89 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ========================================================
-// 1. FULLSCREEN CONFETTI & PARTICLES ENGINE
+// 1. FULLSCREEN CONFETTI & PARTICLES ENGINE (ANDROID OPTIMIZED)
 // ========================================================
 let confettiCanvas, ctx;
 let particles = [];
+let prevWidth = 0;
+let lastRenderTime = 0;
+const isMobileDevice = window.innerWidth < 768 || /Android|iPhone|iPad/i.test(navigator.userAgent);
+const maxAmbientParticles = isMobileDevice ? 22 : 45;
 
 function initConfettiCanvas() {
   confettiCanvas = document.getElementById("confetti-canvas");
   if (!confettiCanvas) return;
-  ctx = confettiCanvas.getContext("2d");
+  ctx = confettiCanvas.getContext("2d", { alpha: true });
 
   function resize() {
-    confettiCanvas.width = window.innerWidth;
-    confettiCanvas.height = window.innerHeight;
+    const currentWidth = window.innerWidth;
+    // On mobile Android, ignore vertical-only resize events caused by address bar collapsing/expanding
+    if (Math.abs(currentWidth - prevWidth) < 12 && prevWidth !== 0) return;
+    prevWidth = currentWidth;
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    confettiCanvas.width = window.innerWidth * dpr;
+    confettiCanvas.height = window.innerHeight * dpr;
+    confettiCanvas.style.width = window.innerWidth + "px";
+    confettiCanvas.style.height = window.innerHeight + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
-  window.addEventListener("resize", resize);
+
+  window.addEventListener("resize", resize, { passive: true });
+  window.addEventListener("orientationchange", () => {
+    prevWidth = 0;
+    setTimeout(resize, 100);
+  }, { passive: true });
   resize();
 
-  renderConfetti();
+  requestAnimationFrame(renderConfetti);
 }
 
 function triggerConfetti(originX, originY, count = 60) {
   if (!confettiCanvas) return;
+  // Cap burst count on mobile to keep 60/120 fps butter smooth
+  const actualCount = isMobileDevice ? Math.min(count, 35) : count;
   const colors = [
     "#f43f73", "#ff758f", "#ffd700", "#f472b6", 
     "#d8b4fe", "#fed7aa", "#fff", "#fb7185", "#fbb6ce"
   ];
   const shapes = ["circle", "rect", "heart", "star"];
 
-  for (let i = 0; i < count; i++) {
+  for (let i = 0; i < actualCount; i++) {
     const angle = Math.random() * Math.PI * 2;
-    const speed = Math.random() * 9 + 4;
+    const speed = Math.random() * 8 + 3;
     particles.push({
       x: originX || window.innerWidth / 2,
       y: originY || window.innerHeight / 2,
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed - 3,
-      size: Math.random() * 8 + 5,
+      size: Math.random() * 7 + 4,
       color: colors[Math.floor(Math.random() * colors.length)],
       shape: shapes[Math.floor(Math.random() * shapes.length)],
       rotation: Math.random() * 360,
-      rotationSpeed: (Math.random() - 0.5) * 12,
+      rotationSpeed: (Math.random() - 0.5) * 10,
       gravity: 0.22,
       friction: 0.96,
       opacity: 1,
-      decay: Math.random() * 0.015 + 0.008
+      decay: Math.random() * 0.016 + 0.01
     });
   }
 }
 
-function renderConfetti() {
+function renderConfetti(timestamp) {
   if (!ctx || !confettiCanvas) return;
-  ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+
+  // Frame rate throttling for mobile stability (~60fps ceiling)
+  if (timestamp) {
+    const elapsed = timestamp - lastRenderTime;
+    if (elapsed < 14) {
+      requestAnimationFrame(renderConfetti);
+      return;
+    }
+    lastRenderTime = timestamp;
+  }
+
+  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
   for (let i = particles.length - 1; i >= 0; i--) {
     const p = particles[i];
@@ -84,7 +115,7 @@ function renderConfetti() {
     p.rotation += p.rotationSpeed;
     p.opacity -= p.decay;
 
-    if (p.opacity <= 0 || p.y > confettiCanvas.height + 50) {
+    if (p.opacity <= 0 || p.y > window.innerHeight + 40) {
       particles.splice(i, 1);
       continue;
     }
@@ -111,7 +142,7 @@ function renderConfetti() {
     ctx.restore();
   }
 
-  // Gentle ambient falling rose & blossom petals
+  // Gentle ambient falling blossom petals
   ambientPetalTick();
 
   requestAnimationFrame(renderConfetti);
@@ -121,19 +152,20 @@ let ambientCounter = 0;
 function ambientPetalTick() {
   if (!confettiCanvas) return;
   ambientCounter++;
-  if (ambientCounter % 40 === 0 && particles.length < 45) {
+  const interval = isMobileDevice ? 55 : 38;
+  if (ambientCounter % interval === 0 && particles.length < maxAmbientParticles) {
     const petalColors = ["#fbcfe8", "#fbb6ce", "#f472b6", "#fed7aa", "#ffd700", "#ffffff"];
     particles.push({
-      x: Math.random() * confettiCanvas.width,
-      y: -25,
-      vx: Math.sin(ambientCounter * 0.04) * 0.9,
-      vy: Math.random() * 1.1 + 0.7,
-      size: Math.random() * 7 + 8,
+      x: Math.random() * window.innerWidth,
+      y: -20,
+      vx: Math.sin(ambientCounter * 0.04) * 0.8,
+      vy: Math.random() * 0.9 + 0.6,
+      size: Math.random() * 6 + 7,
       color: petalColors[Math.floor(Math.random() * petalColors.length)],
-      shape: Math.random() > 0.45 ? "petal" : (Math.random() > 0.5 ? "heart" : "star"),
+      shape: Math.random() > 0.4 ? "petal" : (Math.random() > 0.5 ? "heart" : "star"),
       rotation: Math.random() * 360,
-      rotationSpeed: (Math.random() - 0.5) * 2.2,
-      gravity: 0.012,
+      rotationSpeed: (Math.random() - 0.5) * 2,
+      gravity: 0.01,
       friction: 0.99,
       opacity: 0.7,
       decay: 0.0012

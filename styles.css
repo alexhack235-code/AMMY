@@ -116,15 +116,15 @@ body.sparkle-cursor-active {
 /* Top Floating Bar / Control Center */
 .top-nav {
   position: sticky;
-  top: 16px;
+  top: 12px;
   z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 10px 24px;
-  background: rgba(255, 255, 255, 0.88);
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--card-border);
@@ -136,25 +136,26 @@ body.sparkle-cursor-active {
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-family: var(--font-script);
-  font-size: 1.85rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--pink-600);
   text-decoration: none;
   text-shadow: 0 2px 8px rgba(225, 29, 90, 0.2);
+  white-space: nowrap;
 }
 
 .nav-brand span.sparkle {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   animation: spinSlow 8s linear infinite;
 }
 
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 8px;
+  flex-wrap: nowrap;
 }
 
 /* German Music Highlight Button */
@@ -162,9 +163,9 @@ body.sparkle-cursor-active {
   background: linear-gradient(135deg, #fbcfe8, #fed7aa);
   border: 1.5px solid #f472b6;
   color: #831843;
-  padding: 8px 16px;
+  padding: 7px 14px;
   border-radius: var(--radius-pill);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
@@ -172,6 +173,7 @@ body.sparkle-cursor-active {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(244, 63, 115, 0.18);
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 .german-music-nav-btn:hover {
@@ -186,9 +188,9 @@ body.sparkle-cursor-active {
   background: linear-gradient(135deg, #f43f73, #e11d5a);
   color: #fff;
   border: none;
-  padding: 8px 16px;
+  padding: 7px 14px;
   border-radius: var(--radius-pill);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
@@ -197,6 +199,7 @@ body.sparkle-cursor-active {
   box-shadow: 0 4px 14px rgba(244, 63, 115, 0.3);
   transition: var(--transition);
   animation: pulsePopper 2.5s infinite;
+  white-space: nowrap;
 }
 
 .party-popper-btn:hover {
@@ -216,18 +219,20 @@ body.sparkle-cursor-active {
   gap: 8px;
   background: linear-gradient(135deg, #fff0f5, #ffe4e9);
   border: 1px solid var(--pink-300);
-  padding: 6px 14px;
+  padding: 6px 12px;
   border-radius: var(--radius-pill);
   box-shadow: 0 2px 8px rgba(244, 63, 115, 0.15);
+  white-space: nowrap;
 }
 
 .vinyl-disc {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: radial-gradient(circle, #f43f73 30%, #333 35%, #111 90%);
   border: 2px solid #fff;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
 }
 
 .vinyl-disc.spinning {
@@ -238,7 +243,7 @@ body.sparkle-cursor-active {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--pink-600);
-  max-width: 150px;
+  max-width: 140px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -248,16 +253,17 @@ body.sparkle-cursor-active {
   background: #ffffff;
   border: 1px solid var(--pink-200);
   color: var(--pink-600);
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: var(--transition);
   box-shadow: 0 2px 6px rgba(244, 63, 115, 0.1);
+  flex-shrink: 0;
 }
 
 .icon-btn:hover {
@@ -266,6 +272,196 @@ body.sparkle-cursor-active {
   color: #fff;
   border-color: var(--pink-500);
   box-shadow: var(--glow-pink);
+}
+
+/* =========================================
+   RESPONSIVE MOBILE & ANDROID RESIZING
+   ========================================= */
+@media (max-width: 768px) {
+  .top-nav {
+    top: 8px;
+    margin: 0 10px 14px;
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    gap: 6px;
+    min-height: 46px;
+    box-shadow: 0 4px 16px rgba(225, 29, 90, 0.12);
+  }
+
+  .nav-brand {
+    font-size: 1.35rem;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .nav-brand span.sparkle {
+    font-size: 0.95rem;
+  }
+
+  .nav-controls {
+    gap: 5px;
+    flex-wrap: nowrap;
+  }
+
+  /* Hide word labels on mobile so buttons stay compact & cute */
+  .nav-btn-label {
+    display: none !important;
+  }
+
+  .german-music-nav-btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    gap: 0;
+    border-radius: var(--radius-pill);
+    min-height: 32px;
+  }
+
+  .party-popper-btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    gap: 0;
+    border-radius: var(--radius-pill);
+    min-height: 32px;
+  }
+
+  .music-capsule {
+    padding: 4px 8px;
+    gap: 4px;
+    min-height: 32px;
+  }
+
+  .music-capsule .track-info {
+    display: none !important;
+  }
+
+  .vinyl-disc {
+    width: 22px;
+    height: 22px;
+  }
+
+  .icon-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  /* Cursor trail button is hidden on mobile touchscreens */
+  #cursor-toggle-btn {
+    display: none !important;
+  }
+
+  /* Main wrapper & Hero sizing for mobile */
+  .main-wrapper {
+    padding: 8px 12px 60px;
+  }
+
+  .hero-section {
+    padding: 16px 6px 30px;
+  }
+
+  .tiara-badge {
+    font-size: 0.76rem;
+    padding: 6px 14px;
+    margin-bottom: 12px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.85rem, 7.5vw, 2.75rem);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0 4px;
+  }
+
+  .hero-cta-group {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+
+  .balloon-sky {
+    gap: 6px;
+  }
+
+  .balloon-item {
+    width: 42px;
+    height: 56px;
+    font-size: 1.15rem;
+  }
+
+  .balloon-hint {
+    font-size: 0.78rem;
+  }
+
+  .section-block {
+    margin: 32px 0;
+    padding: 24px 14px;
+    border-radius: 20px;
+  }
+
+  .section-title {
+    font-size: 1.55rem;
+  }
+
+  .magic-mirror {
+    width: 100%;
+    min-height: 300px;
+    padding: 26px 16px;
+  }
+
+  .mirror-fortune-text {
+    font-size: 1.15rem;
+  }
+
+  .cake-scene {
+    width: 270px;
+    height: 250px;
+  }
+
+  .cake-plate {
+    width: 250px;
+  }
+
+  .cake-tier.tier-bottom {
+    width: 210px;
+    height: 75px;
+  }
+
+  .cake-tier.tier-top {
+    width: 150px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .top-nav {
+    margin: 0 4px 10px;
+    padding: 5px 8px;
+  }
+
+  .nav-brand {
+    font-size: 1.22rem;
+  }
+
+  #next-track-btn {
+    display: none !important;
+  }
+
+  .german-music-nav-btn,
+  .party-popper-btn {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
 }
 
 /* Main Container */
@@ -1998,6 +2194,52 @@ body.sparkle-cursor-active {
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .music-popup-overlay {
+    padding: 12px;
+  }
+  .music-popup-card {
+    padding: 22px 16px;
+    max-height: 94vh;
+    border-radius: 22px;
+  }
+  .german-title {
+    font-size: 1.45rem;
+  }
+  .german-subtitle {
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+  }
+  .german-player-box {
+    padding: 14px 12px;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .german-disc-wrap {
+    width: 76px;
+    height: 76px;
+  }
+  .german-disc-center {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  .song-meta-text .song-title {
+    font-size: 1.05rem;
+  }
+  .lyrics-box {
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+  .german-verse {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .english-trans {
+    font-size: 0.8rem;
+  }
 }
 
 /* =========================================
