@@ -105,11 +105,46 @@ function renderConfetti() {
       drawHeart(ctx, 0, 0, p.size * 0.8);
     } else if (p.shape === "star") {
       drawStar(ctx, 0, 0, 5, p.size * 0.8, p.size * 0.4);
+    } else if (p.shape === "petal") {
+      drawPetal(ctx, 0, 0, p.size);
     }
     ctx.restore();
   }
 
+  // Gentle ambient falling rose & blossom petals
+  ambientPetalTick();
+
   requestAnimationFrame(renderConfetti);
+}
+
+let ambientCounter = 0;
+function ambientPetalTick() {
+  if (!confettiCanvas) return;
+  ambientCounter++;
+  if (ambientCounter % 40 === 0 && particles.length < 45) {
+    const petalColors = ["#fbcfe8", "#fbb6ce", "#f472b6", "#fed7aa", "#ffd700", "#ffffff"];
+    particles.push({
+      x: Math.random() * confettiCanvas.width,
+      y: -25,
+      vx: Math.sin(ambientCounter * 0.04) * 0.9,
+      vy: Math.random() * 1.1 + 0.7,
+      size: Math.random() * 7 + 8,
+      color: petalColors[Math.floor(Math.random() * petalColors.length)],
+      shape: Math.random() > 0.45 ? "petal" : (Math.random() > 0.5 ? "heart" : "star"),
+      rotation: Math.random() * 360,
+      rotationSpeed: (Math.random() - 0.5) * 2.2,
+      gravity: 0.012,
+      friction: 0.99,
+      opacity: 0.7,
+      decay: 0.0012
+    });
+  }
+}
+
+function drawPetal(c, x, y, size) {
+  c.beginPath();
+  c.ellipse(x, y, size * 0.5, size * 0.9, Math.PI / 4, 0, Math.PI * 2);
+  c.fill();
 }
 
 function drawHeart(c, x, y, size) {
