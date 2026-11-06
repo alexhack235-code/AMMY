@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Ammanda! 🌸👑✨</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sparkle-cursor-active">
+
+  <!-- Confetti and Celebration Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Ambient Blurred Glow Elements -->
+  <div class="ambient-background">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+  </div>
+
+  <!-- Top Sticky Ambient Controls -->
+  <header class="top-nav">
+    <a href="#hero" class="nav-brand">
+      <span>Ammanda</span>
+      <span class="sparkle">✨</span>
+    </a>
+
+    <div class="nav-controls">
+      <!-- German Birthday Music Button -->
+      <button class="german-music-nav-btn" id="open-german-music-btn" title="Deutsche Geburtstagsmusik für Ammanda!">
+        <span>🇩🇪</span> Deutsche Musik
+      </button>
+
+      <!-- Party Popper Cannon Button -->
+      <button class="party-popper-btn" id="party-popper-top-btn" title="Launch Celebration Glitter Shower!">
+        <span>🎉</span> Party Popper
+      </button>
+
+      <!-- Music Box Capsule -->
+      <div class="music-capsule">
+        <div class="vinyl-disc" id="nav-vinyl-disc"></div>
+        <div class="track-info" id="nav-track-title">Happy Birthday Box</div>
+        <button class="icon-btn" id="music-toggle-btn" title="Play / Pause Birthday Music Box">▶</button>
+        <button class="icon-btn" id="next-track-btn" title="Next Song">⏭</button>
+      </div>
+
+      <!-- Sparkle Cursor Toggle -->
+      <button class="icon-btn" id="cursor-toggle-btn" title="Toggle Sparkle Cursor">🪄</button>
+
+      <!-- Mute / Unmute Button -->
+      <button class="icon-btn" id="audio-mute-btn" title="Mute / Unmute Sound Effects">🔔</button>
+    </div>
+  </header>
+
+  <!-- Main Website Content -->
+  <main class="main-wrapper">
+
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <section class="hero-section" id="hero">
+      <div class="tiara-badge">
+        <span>👑</span>
+        <span>VIP CELEBRATION • THE QUEEN'S SPECIAL DAY</span>
+      </div>
+
+      <h1 class="hero-title">
+        Happy Birthday, Beautiful<br>
+        <span class="name-highlight">Ammanda</span>! 🌸✨
+      </h1>
+
+      <p class="hero-subtitle">
+        The universe became infinitely sweeter, more magical, and dazzling the day you arrived. 
+        Today is all about celebrating your radiant smile, gentle heart, and iconic sparkle! 💕
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#letter-section" class="btn-primary">
+          <span>💌</span> Read Royal Letter
+        </a>
+        <a href="#cake-section" class="btn-secondary">
+          <span>🎂</span> Blow the Cake
+        </a>
+        <a href="#gifts-section" class="btn-secondary">
+          <span>🎁</span> Mystery Gifts
+        </a>
+        <a href="#reasons-section" class="btn-secondary">
+          <span>💖</span> 10 Reasons We Love You
+        </a>
+        <a href="#mirror-section" class="btn-secondary">
+          <span>🪞</span> Queen's Mirror
+        </a>
+        <a href="#guestbook-section" class="btn-secondary">
+          <span>📝</span> Fairy Wishbook
+        </a>
+      </div>
+
+      <!-- Floating Balloon Sky (Pop Me!) -->
+      <div class="balloon-sky" title="Tap any balloon to pop it!">
+        <div class="balloon-item"><span class="balloon-letter">A</span></div>
+        <div class="balloon-item"><span class="balloon-letter">M</span></div>
+        <div class="balloon-item"><span class="balloon-letter">M</span></div>
+        <div class="balloon-item"><span class="balloon-letter">A</span></div>
+        <div class="balloon-item"><span class="balloon-letter">N</span></div>
+        <div class="balloon-item"><span class="balloon-letter">D</span></div>
+        <div class="balloon-item"><span class="balloon-letter">A</span></div>
+      </div>
+      <div class="balloon-hint">
+        <span>🎈</span>
+        <span>Click any balloon above to pop it and reveal a secret compliment!</span>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         ROYAL BIRTHDAY ENVELOPE & LETTER
+         ========================================== -->
+    <section class="section-block" id="letter-section">
+      <div class="section-ribbon-tag">ROYAL POST</div>
+
+      <div class="section-header">
+        <span class="section-tag">Handcrafted With Love</span>
+        <h2 class="section-title">A Special Delivery for Ammanda</h2>
+        <p class="section-desc">
+          Sealed with a wax crest and golden sparkles. Click the envelope to break the seal and read your birthday letter!
+        </p>
+      </div>
+
+      <div class="letter-envelope-container">
+        <!-- Interactive Envelope -->
+        <div class="royal-envelope" id="royal-envelope-elem" title="Click to break the seal!">
+          <div class="envelope-flap"></div>
+          <div class="wax-seal">A</div>
+          <div class="envelope-preview-text">To: Beautiful Ammanda 🌸</div>
+        </div>
+
+        <!-- Unfolded Royal Parchment Letter -->
+        <div class="unfolded-parchment" id="unfolded-parchment-letter">
+          <div class="parchment-stamp">👑</div>
+          <div class="parchment-salutation">Dearest Ammanda,</div>
+          <div class="parchment-body">
+            <p>
+              Today isn't just another ordinary date on the calendar — it marks the day someone genuinely extraordinary came into this world.
+            </p>
+            <p style="margin-top: 14px;">
+              Thank you for being the kind of person who makes rooms feel lighter, who turns routine moments into memories, and whose smile is nothing short of pure sunshine. Your kindness, your humor, your style, and the quiet strength you carry inspire everyone fortunate enough to know you.
+            </p>
+            <p style="margin-top: 14px;">
+              As you step into this gorgeous new year of your life, we wish you overflowing joy, deep peaceful nights, wild adventures, sweet treats without guilt, iced coffees made to perfection, and all the love you give so effortlessly returned to you tenfold.
+            </p>
+            <p style="margin-top: 14px; font-weight: 600; color: var(--pink-600);">
+              Keep shining, keep smiling, and never forget how utterly loved and adored you are! 💕✨
+            </p>
+          </div>
+          <div class="parchment-signoff">
+            Always cheering for you,<br>
+            <span>Your Biggest Admirers & Besties 🌸</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         INTERACTIVE BIRTHDAY CAKE & WISH JAR
+         ========================================== -->
+    <section class="section-block" id="cake-section">
+      <div class="section-ribbon-tag">MAKE A WISH</div>
+
+      <div class="section-header">
+        <span class="section-tag">Sweetest Confectionery</span>
+        <h2 class="section-title">Ammanda's Grand Birthday Cake</h2>
+        <p class="section-desc">
+          Close your eyes, make the deepest secret wish of your heart, and blow out the candles!
+        </p>
+      </div>
+
+      <div class="cake-interactive-box">
+        <!-- 3D Layered CSS Cake -->
+        <div class="cake-scene">
+          <!-- Candles Row -->
+          <div class="candles-row">
+            <div class="candle">
+              <div class="candle-wick"></div>
+              <div class="flame"></div>
+              <div class="smoke-puff"></div>
+            </div>
+            <div class="candle">
+              <div class="candle-wick"></div>
+              <div class="flame"></div>
+              <div class="smoke-puff"></div>
+            </div>
+            <div class="candle">
+              <div class="candle-wick"></div>
+              <div class="flame"></div>
+              <div class="smoke-puff"></div>
+            </div>
+          </div>
+
+          <!-- Top Tier -->
+          <div class="cake-tier tier-top">
+            <div class="cake-berries">
+              <span class="berry">🍓</span>
+              <span class="berry">🌸</span>
+              <span class="berry">🍓</span>
+            </div>
+            <div class="frosting-drips"></div>
+          </div>
+
+          <!-- Bottom Tier -->
+          <div class="cake-tier tier-bottom">
+            <div class="frosting-drips"></div>
+          </div>
+
+          <!-- Ceramic Plate -->
+          <div class="cake-plate"></div>
+        </div>
+
+        <!-- Cake Controls & Wish Badge -->
+        <div class="cake-controls">
+          <div class="wish-status-badge" id="wish-status-badge">
+            <span>🎂</span>
+            <span>Candles glowing! Make a wish and blow! ✨</span>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+            <button class="btn-primary" id="blow-candles-btn">
+              <span>💨</span> Blow Out the Candles!
+            </button>
+            <button class="btn-secondary" id="relight-candles-btn" style="display: none;">
+              <span>🕯️</span> Relight Candles
+            </button>
+          </div>
+
+          <!-- Secret Wishing Jar Input -->
+          <div style="margin-top: 18px; width: 100%; max-width: 520px; text-align: center;">
+            <p style="font-size: 0.92rem; color: #7a485a; margin-bottom: 8px; font-weight: 500;">
+              ✨ Seal a secret birthday wish into Ammanda's Constellation Jar:
+            </p>
+            <div class="wish-input-wrapper">
+              <input type="text" id="secret-wish-input" class="wish-input" placeholder="Type a dream, wish or goal for this year...">
+              <button class="btn-primary" id="save-wish-btn" style="padding: 12px 20px;">
+                <span>🪄</span> Seal Wish
+              </button>
+            </div>
+            <div class="wish-jar-display" id="wish-jar-display"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SURPRISE GIFT BOX UNBOXING
+         ========================================== -->
+    <section class="section-block" id="gifts-section">
+      <div class="section-ribbon-tag">SPECIAL DELIVERY</div>
+
+      <div class="section-header">
+        <span class="section-tag">VIP Royal Treat</span>
+        <h2 class="section-title">Ammanda's Mystery Gift Box</h2>
+        <p class="section-desc">
+          A luxury present tied with golden satin ribbons. Tap the box to untie it and claim your birthday perks!
+        </p>
+      </div>
+
+      <div class="gift-unboxing-area">
+        <!-- 3D Interactive Wrapped Box -->
+        <div class="gift-box-wrapper" id="main-gift-box" title="Click to open the gift!">
+          <div class="gift-bow">🎀</div>
+          <div class="gift-box-lid">
+            <div class="gift-ribbon-vertical"></div>
+          </div>
+          <div class="gift-box-body">
+            <div class="gift-ribbon-vertical"></div>
+            <div class="gift-ribbon-horizontal"></div>
+            <div class="gift-tag">To: Ammanda 💕</div>
+          </div>
+        </div>
+
+        <!-- Revealed Birthday Perk Coupons (Appears upon unboxing) -->
+        <div class="coupons-grid" id="gift-coupons-container" style="display: none;">
+          <!-- Coupon 1 -->
+          <div class="coupon-card">
+            <div>
+              <div class="coupon-header">
+                <div class="coupon-icon">👑</div>
+                <div>
+                  <div class="coupon-badge">Official Royal Pass</div>
+                  <div class="coupon-title">The 365-Day Princess Privilege</div>
+                </div>
+              </div>
+              <p class="coupon-desc">
+                Entitles Ammanda to complete immunity from bad moods, total priority on choosing where to eat, and unconditional princess treatment!
+              </p>
+            </div>
+            <div class="coupon-footer">
+              <span class="coupon-code">AMMANDA-QUEEN-01</span>
+              <button class="redeem-btn">Redeem Perk 💕</button>
+            </div>
+          </div>
+
+          <!-- Coupon 2 -->
+          <div class="coupon-card">
+            <div>
+              <div class="coupon-header">
+                <div class="coupon-icon">☕</div>
+                <div>
+                  <div class="coupon-badge">Sweet Tooth Pass</div>
+                  <div class="coupon-title">Aesthetic Cafe & Dessert Date</div>
+                </div>
+              </div>
+              <p class="coupon-desc">
+                Redeemable for strawberry matchas, iced lattes, fluffy pastries, or any gourmet dessert whenever you need a sweet serotonin boost!
+              </p>
+            </div>
+            <div class="coupon-footer">
+              <span class="coupon-code">COFFEE-SEROTONIN</span>
+              <button class="redeem-btn">Redeem Perk 💕</button>
+            </div>
+          </div>
+
+          <!-- Coupon 3 -->
+          <div class="coupon-card">
+            <div>
+              <div class="coupon-header">
+                <div class="coupon-icon">💆‍♀️</div>
+                <div>
+                  <div class="coupon-badge">Self Care Heaven</div>
+                  <div class="coupon-title">Ultimate Luxury Pamper Day</div>
+                </div>
+              </div>
+              <p class="coupon-desc">
+                Scented rose candles, sheet masks, soothing playlists, cozy blankets, zero chores, and 100% serene relaxation time.
+              </p>
+            </div>
+            <div class="coupon-footer">
+              <span class="coupon-code">SPA-SERENITY-365</span>
+              <button class="redeem-btn">Redeem Perk 💕</button>
+            </div>
+          </div>
+
+          <!-- Coupon 4 -->
+          <div class="coupon-card">
+            <div>
+              <div class="coupon-header">
+                <div class="coupon-icon">🛍️</div>
+                <div>
+                  <div class="coupon-badge">Fashion Hype Pass</div>
+                  <div class="coupon-title">Endless Shopping & Outfit Hype</div>
+                </div>
+              </div>
+              <p class="coupon-desc">
+                Your personal hype squad dedicated to celebrating every fabulous outfit, carrying bags, and finding the prettiest accessories!
+              </p>
+            </div>
+            <div class="coupon-footer">
+              <span class="coupon-code">GLAMOUR-HYPE-247</span>
+              <button class="redeem-btn">Redeem Perk 💕</button>
+            </div>
+          </div>
+
+          <!-- Coupon 5 -->
+          <div class="coupon-card">
+            <div>
+              <div class="coupon-header">
+                <div class="coupon-icon">🎬</div>
+                <div>
+                  <div class="coupon-badge">Cozy Night Pass</div>
+                  <div class="coupon-title">Movie Marathon & Giant Popcorn</div>
+                </div>
+              </div>
+              <p class="coupon-desc">
+                You control the remote, you pick the drama or rom-com, plus endless snacks, warm tea, and pillow fortress privileges.
+              </p>
+            </div>
+            <div class="coupon-footer">
+              <span class="coupon-code">COZY-MOVIE-NIGHT</span>
+              <button class="redeem-btn">Redeem Perk 💕</button>
+            </div>
+          </div>
+
+          <!-- Coupon 6 -->
+          <div class="coupon-card">
+            <div>
+              <div class="coupon-header">
+                <div class="coupon-icon">💖</div>
+                <div>
+                  <div class="coupon-badge">Bestie Forever</div>
+                  <div class="coupon-title">24/7 Warm Hug & Hotline</div>
+                </div>
+              </div>
+              <p class="coupon-desc">
+                No expiration date! Valid for late night tea-spilling, impromptu voice notes, advice, and giant soul-warming hugs anytime.
+              </p>
+            </div>
+            <div class="coupon-footer">
+              <span class="coupon-code">BESTIE-HUG-INFINITY</span>
+              <button class="redeem-btn">Redeem Perk 💕</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         10 REASONS WHY WE ADORE AMMANDA
+         ========================================== -->
+    <section class="section-block" id="reasons-section">
+      <div class="section-ribbon-tag">SWEET TRUTHS</div>
+
+      <div class="section-header">
+        <span class="section-tag">Irreplaceable & Darling</span>
+        <h2 class="section-title">10 Reasons We Adore Ammanda</h2>
+        <p class="section-desc">
+          Hover or tap any card to flip it and read why you mean so much to all of us! 💖
+        </p>
+      </div>
+
+      <div class="reasons-grid">
+        <!-- Card 1 -->
+        <div class="reason-card">
+          <div class="reason-card-inner">
+            <div class="reason-card-front">
+              <div class="reason-num">#1</div>
+              <div class="reason-front-title">Your Radiant Laugh ☀️</div>
+              <div class="reason-flip-hint">Tap to flip 🔄</div>
+            </div>
+            <div class="reason-card-back">
+              <p class="reason-back-text">Your laugh is genuinely medicine. The moment you start laughing, the whole atmosphere turns joyful!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="reason-card">
+          <div class="reason-card-inner">
+            <div class="reason-card-front">
+              <div class="reason-num">#2</div>
+              <div class="reason-front-title">Effortless Style & Glow ✨</div>
+              <div class="reason-flip-hint">Tap to flip 🔄</div>
+            </div>
+            <div class="reason-card-back">
+              <p class="reason-back-text">Whether dressed up or in cozy loungewear, you always look iconic, chic, and effortlessly stunning.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="reason-card">
+          <div class="reason-card-inner">
+            <div class="reason-card-front">
+              <div class="reason-num">#3</div>
+              <div class="reason-front-title">Deep Genuine Kindness 🌸</div>
+              <div class="reason-flip-hint">Tap to flip 🔄</div>
+            </div>
+            <div class="reason-card-back">
+              <p class="reason-back-text">You remember small details and make people feel heard, cared for, and deeply special.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="reason-card">
+          <div class="reason-card-inner">
+            <div class="reason-card-front">
+              <div class="reason-num">#4</div>
+              <div class="reason-front-title">The Best Conversationalist ☕</div>
+              <div class="reason-flip-hint">Tap to flip 🔄</div>
+            </div>
+            <div class="reason-card-back">
+              <p class="reason-back-text">Hours feel like minutes when talking to you. You give the best advice and share the funniest stories!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="reason-card">
+          <div class="reason-card-inner">
+            <div class="reason-card-front">
+              <div class="reason-num">#5</div>
+              <div class="reason-front-title">Fierce Loyalty 🛡️</div>
+              <div class="reason-flip-hint">Tap to flip 🔄</div>
+            </div>
+            <div class="reason-card-back">
+              <p class="reason-back-text">You always stand by the people you love. Having Ammanda in your corner is the greatest superpower.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="reason-card">
+          <div class="reason-card-inner">
+            <div class="reason-card-front">
+              <div class="reason-num">#6</div>
+              <div class="reason-front-title">Unmatched Aesthetic Taste 🎀</div>
+              <div class="reason-flip-hint">Tap to flip 🔄</div>
+            </div>
+            <div class="reason-card-back">
+              <p class="reason-back-text">From playlists to cafes and cozy vibes, your taste is always 10/10 perfection.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="reason-card">
+          <div class="reason-card-inner">
+            <div class="reason-card-front">
+              <div class="reason-num">#7</div>
+              <div class="reason-front-title">Sweet Sense of Humor 🧁</div>
+              <div class="reason-flip-hint">Tap to flip 🔄</div>
+            </div>
+            <div class="reason-card-back">
+              <p class="reason-back-text">You never take life too seriously and know how to find the silver lining and giggle through chaos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="reason-card">
+          <div class="reason-card-inner">
+            <div class="reason-card-front">
+              <div class="reason-num">#8</div>
+              <div class="reason-front-title">Quiet Strength & Grace 👑</div>
+              <div class="reason-flip-hint">Tap to flip 🔄</div>
+            </div>
+            <div class="reason-card-back">
+              <p class="reason-back-text">You handle challenges with so much poise, wisdom, and an inspiring gentle resilience.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="reason-card">
+          <div class="reason-card-inner">
+            <div class="reason-card-front">
+              <div class="reason-num">#9</div>
+              <div class="reason-front-title">A Hug for the Soul 💖</div>
+              <div class="reason-flip-hint">Tap to flip 🔄</div>
+            </div>
+            <div class="reason-card-back">
+              <p class="reason-back-text">Just being around your calm, loving presence feels comforting, like coming home to a cozy fire.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="reason-card">
+          <div class="reason-card-inner">
+            <div class="reason-card-front">
+              <div class="reason-num">#10</div>
+              <div class="reason-front-title">Simply Being YOU! 🌟</div>
+              <div class="reason-flip-hint">Tap to flip 🔄</div>
+            </div>
+            <div class="reason-card-back">
+              <p class="reason-back-text">There is only one Ammanda in this universe, and we wouldn't change a single thing about you!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         POLAROID MEMORY WALL
+         ========================================== -->
+    <section class="section-block" id="memories-section">
+      <div class="section-ribbon-tag">GOLDEN MOMENTS</div>
+
+      <div class="section-header">
+        <span class="section-tag">Pure Sunshine</span>
+        <h2 class="section-title">Ammanda's Polaroid Scrapbook</h2>
+        <p class="section-desc">
+          A fairy-lit gallery celebrating your glowing elegance, fun adventures, and the sweet warmth you bring to the world.
+        </p>
+      </div>
+
+      <!-- Polaroid Cards Grid -->
+      <div class="polaroids-gallery" id="polaroids-gallery-container"></div>
+
+      <div class="gallery-action-bar">
+        <button class="btn-primary" id="open-add-memory-btn">
+          <span>📸</span> Pin a New Memory or Photo
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         QUEEN'S COMPLIMENT MIRROR
+         ========================================== -->
+    <section class="section-block" id="mirror-section">
+      <div class="section-ribbon-tag">DAILY GLAMOUR</div>
+
+      <div class="section-header">
+        <span class="section-tag">Mirror, Mirror</span>
+        <h2 class="section-title">The Royal Compliment Mirror</h2>
+        <p class="section-desc">
+          Tap the looking glass to reveal a sparkling reminder of why Ammanda is so cherished and fabulous!
+        </p>
+      </div>
+
+      <div class="mirror-section-content">
+        <div class="magic-mirror" id="magic-mirror-card" title="Tap to consult the royal mirror!">
+          <div class="mirror-crown">👑</div>
+          <div class="mirror-fortune-text" id="mirror-fortune-display">
+            "Ammanda's smile is 100% contagious and known to instantly brighten dull days!"
+          </div>
+          <div class="mirror-author">— The Magic Mirror</div>
+          <div class="mirror-hint">✨ (Tap the mirror to gaze again!) ✨</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CUPCAKE CREATOR MINI-STUDIO
+         ========================================= -->
+    <section class="section-block" id="cupcake-section">
+      <div class="section-ribbon-tag">BAKERY STUDIO</div>
+
+      <div class="section-header">
+        <span class="section-tag">Sweet Creations</span>
+        <h2 class="section-title">Design Ammanda's Dream Birthday Treat</h2>
+        <p class="section-desc">
+          Mix flavors, pastel frostings, and royal toppings to bake the ultimate celebratory treat!
+        </p>
+      </div>
+
+      <div class="cupcake-studio-layout">
+        <!-- Interactive Preview Stage -->
+        <div class="cupcake-display-stage">
+          <div class="cupcake-visual">
+            <div class="cupcake-topper" id="cupcake-topper-elem">👑</div>
+            <div class="cupcake-frosting-top" id="cupcake-frosting-top-elem"></div>
+            <div class="cupcake-frosting" id="cupcake-frosting-elem"></div>
+            <div class="cupcake-sponge" id="cupcake-sponge-elem"></div>
+            <div class="cupcake-wrapper"></div>
+          </div>
+          <div style="margin-top: 16px;">
+            <button class="btn-primary" id="serve-cupcake-btn">
+              <span>✨</span> Serve to Queen Ammanda!
+            </button>
+          </div>
+        </div>
+
+        <!-- Customization Controls Panel -->
+        <div class="cupcake-options-panel">
+          <!-- Sponge Flavor -->
+          <div>
+            <div class="option-group-title">
+              <span>🍰</span> 1. Choose Sponge Flavor:
+            </div>
+            <div class="option-chips">
+              <button class="option-chip active" data-cupcake-sponge="strawberry">Strawberry Velvet</button>
+              <button class="option-chip" data-cupcake-sponge="vanilla">Vanilla Sparkle</button>
+              <button class="option-chip" data-cupcake-sponge="chocolate">Rich Chocolate Cloud</button>
+              <button class="option-chip" data-cupcake-sponge="lavender">Lavender Blossom</button>
+            </div>
+          </div>
+
+          <!-- Frosting Swirl -->
+          <div>
+            <div class="option-group-title">
+              <span>🧁</span> 2. Choose Frosting Swirl:
+            </div>
+            <div class="option-chips">
+              <button class="option-chip active" data-cupcake-frosting="pink-buttercream">Blush Buttercream</button>
+              <button class="option-chip" data-cupcake-frosting="lavender-swirl">Lilac Dream Cream</button>
+              <button class="option-chip" data-cupcake-frosting="gold-cream">Peach Champagne</button>
+              <button class="option-chip" data-cupcake-frosting="mint-cloud">Pastel Mint Glaze</button>
+            </div>
+          </div>
+
+          <!-- Topping Decor -->
+          <div>
+            <div class="option-group-title">
+              <span>🍒</span> 3. Crown With Signature Topper:
+            </div>
+            <div class="option-chips">
+              <button class="option-chip active" data-cupcake-topper="👑">👑 Queen Crown</button>
+              <button class="option-chip" data-cupcake-topper="🍓">🍓 Fresh Strawberry</button>
+              <button class="option-chip" data-cupcake-topper="🍒">🍒 Glazed Cherry</button>
+              <button class="option-chip" data-cupcake-topper="🎀">🎀 Satin Bow</button>
+              <button class="option-chip" data-cupcake-topper="💖">💖 Sparkle Heart</button>
+              <button class="option-chip" data-cupcake-topper="🕯️">🕯️ Birthday Candle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FAIRY LIGHT WISHBOOK / GUESTBOOK
+         ========================================== -->
+    <section class="section-block" id="guestbook-section">
+      <div class="section-ribbon-tag">GUESTBOOK</div>
+
+      <div class="section-header">
+        <span class="section-tag">Letters of Love</span>
+        <h2 class="section-title">Ammanda's Fairy Light Wishbook</h2>
+        <p class="section-desc">
+          Leave a darling birthday greeting, funny memory, or loving blessing on Ammanda's corkboard!
+        </p>
+      </div>
+
+      <div class="wishbook-corkboard">
+        <!-- Twinkling Fairy Lights String -->
+        <div class="fairy-lights-string">
+          <div class="fairy-bulb"></div>
+          <div class="fairy-bulb"></div>
+          <div class="fairy-bulb"></div>
+          <div class="fairy-bulb"></div>
+          <div class="fairy-bulb"></div>
+          <div class="fairy-bulb"></div>
+          <div class="fairy-bulb"></div>
+          <div class="fairy-bulb"></div>
+          <div class="fairy-bulb"></div>
+          <div class="fairy-bulb"></div>
+        </div>
+
+        <!-- Pinned Sticky Notes -->
+        <div class="wishbook-notes-grid" id="wishbook-notes-container"></div>
+
+        <!-- Leave a Note Form -->
+        <div class="leave-wish-form-wrapper">
+          <h3 style="font-family: var(--font-heading); color: #3b1725; margin-bottom: 14px; font-size: 1.25rem;">
+            💌 Pin Your Birthday Wish for Ammanda
+          </h3>
+          <form id="leave-wish-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="wish-author-name">Your Name / Bestie Alias:</label>
+                <input type="text" id="wish-author-name" class="form-control" placeholder="e.g. Jessica, Your Secret Admirer, Mom..." required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Pick Card Pastel Color:</label>
+                <div class="picker-row">
+                  <div class="color-dot active" data-color="pink" style="background: #ffe4e9;"></div>
+                  <div class="color-dot" data-color="lavender" style="background: #f3e8ff;"></div>
+                  <div class="color-dot" data-color="peach" style="background: #ffedd5;"></div>
+                  <div class="color-dot" data-color="yellow" style="background: #fef9c3;"></div>
+                  <div class="color-dot" data-color="mint" style="background: #dcfce7;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 16px;">
+              <label class="form-label" for="wish-author-msg">Your Warm Birthday Message:</label>
+              <textarea id="wish-author-msg" rows="3" class="form-control" placeholder="Wish Ammanda the happiest year filled with laughter, adventures, and love..." required></textarea>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+              <div class="form-group" style="margin: 0;">
+                <label class="form-label">Pick a Stamp Sticker:</label>
+                <div class="picker-row">
+                  <span class="sticker-option active" data-sticker="💖">💖</span>
+                  <span class="sticker-option" data-sticker="👑">👑</span>
+                  <span class="sticker-option" data-sticker="🌸">🌸</span>
+                  <span class="sticker-option" data-sticker="🎀">🎀</span>
+                  <span class="sticker-option" data-sticker="🧁">🧁</span>
+                  <span class="sticker-option" data-sticker="🐱">🐱</span>
+                  <span class="sticker-option" data-sticker="⭐">⭐</span>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-primary">
+                <span>📌</span> Pin Note with Glitter
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <p style="font-family: var(--font-script); font-size: 2rem; color: var(--pink-600); margin-bottom: 6px;">
+        Forever Fabulous, Ammanda 💕
+      </p>
+      <p>
+        Crafted with unlimited love, rose petals, and glitter sparkles <span class="footer-heart">💖</span>
+      </p>
+      <p style="font-size: 0.82rem; margin-top: 8px; opacity: 0.7;">
+        Happy Birthday Ammanda • May your 365 days ahead be pure magic!
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- ==========================================
+       MODAL: ADD NEW MEMORY TO POLAROID WALL
+       ========================================== -->
+  <div class="modal-overlay" id="add-memory-modal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="close-modal-btn">&times;</button>
+      <h3 style="font-family: var(--font-heading); color: #3b1725; margin-bottom: 8px; font-size: 1.4rem;">
+        📸 Pin a Memory for Ammanda
+      </h3>
+      <p style="font-size: 0.9rem; color: #7a485a; margin-bottom: 20px;">
+        Upload a real photo of Ammanda or paste an image link to show on her scrapbook wall!
+      </p>
+
+      <form id="add-memory-form">
+        <div class="form-group" style="margin-bottom: 14px;">
+          <label class="form-label">Option A: Upload Photo from Device</label>
+          <input type="file" id="memory-file-input" accept="image/*" class="form-control">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 14px;">
+          <label class="form-label">Option B: Image Web URL</label>
+          <input type="url" id="memory-url-input" class="form-control" placeholder="https://example.com/photo.jpg">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+          <label class="form-label">Memory Caption:</label>
+          <input type="text" id="memory-caption-input" class="form-control" placeholder="e.g. Best beach day with Ammanda! ✨" required>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+          <span>📌</span> Pin to Polaroid Wall
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Real Audio Element for German Birthday Music -->
+  <audio id="german-audio-element" src="german_birthday.ogg" preload="auto"></audio>
+
+  <!-- ==========================================
+       POP-UP MODAL: GERMAN BIRTHDAY MUSIC
+       ========================================== -->
+  <div class="music-popup-overlay" id="german-music-popup">
+    <div class="music-popup-card">
+      <button class="music-popup-close" id="close-german-popup-btn" title="Schließen">&times;</button>
+      
+      <div style="text-align: center;">
+        <div class="german-header-badge">
+          <span>🇩🇪</span>
+          <span>SPECIAL AUS DEUTSCHLAND • HEIMATKLÄNGE 🌸</span>
+        </div>
+        <h2 class="german-title">
+          Alles Gute zum Geburtstag, Ammanda! 🇩🇪👑
+        </h2>
+        <p class="german-subtitle">
+          Dedicated German birthday music celebrating Germany's sweetest girl! 💖
+        </p>
+      </div>
+
+      <!-- German Audio Player Box -->
+      <div class="german-player-box">
+        <div class="german-disc-wrap" id="popup-german-disc">
+          <div class="german-disc-center">🇩🇪</div>
+        </div>
+
+        <div class="song-meta-text">
+          <div class="song-title">Zum Geburtstag viel Glück! 🎂</div>
+          <div class="song-artist">Traditional German Birthday Song • Für Ammanda</div>
+        </div>
+
+        <div class="audio-controls-row">
+          <button class="play-main-circle-btn" id="popup-play-btn" title="Play / Pause German Birthday Song">
+            ▶
+          </button>
+
+          <div class="progress-track-wrapper">
+            <input type="range" class="custom-range-slider" id="popup-progress-slider" min="0" max="100" value="0">
+            <div class="time-readout">
+              <span id="popup-curr-time">0:00</span>
+              <span id="popup-total-time">1:36</span>
+            </div>
+          </div>
+
+          <div class="eq-bars">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- German Lyrics & Warmth Box -->
+      <div class="lyrics-box">
+        <div class="lyrics-title">
+          <span>🌸</span> Sing Along for Ammanda (Deutsche Texte):
+        </div>
+        <p class="german-verse">
+          "Zum Geburtstag viel Glück, zum Geburtstag viel Glück!<br>
+          Zum Geburtstag, liebe <b>Ammanda</b>, zum Geburtstag viel Glück!" 🎶
+        </p>
+        <p class="german-verse" style="margin-top: 6px;">
+          "Wie schön, dass du geboren bist, wir hätten dich sonst sehr vermisst!<br>
+          Wie schön, dass wir beisammen sind, wir gratulieren dir, Geburtstagskind!" ✨
+        </p>
+        <p class="english-trans">
+          🇬🇧 <i>"How wonderful that you were born, we would have missed you dearly! How wonderful that we are together, we celebrate you, birthday queen!"</i>
+        </p>
+      </div>
+
+      <!-- Popup Footer Actions -->
+      <div class="popup-footer-actions">
+        <button class="btn-primary" id="popup-listen-btn">
+          <span>🎵</span> Jetzt Abspielen (Play)
+        </button>
+        <button class="btn-secondary" id="popup-cheer-btn">
+          <span>🥂</span> Konfetti & Prost!
+        </button>
+        <button class="btn-secondary" id="popup-explore-btn">
+          <span>🌸</span> Zur Feier (Explore)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Synthesis Engine & Scripts -->
+  <script src="audio.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
